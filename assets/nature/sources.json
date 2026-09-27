@@ -1,0 +1,142 @@
+[
+  {
+    "id": "rainforest_trail",
+    "name": "Rainforest Trail",
+    "authors": {
+      "Dimitrios Savva": "Photography",
+      "Jarod Guest": "Processing"
+    },
+    "source": "https://polyhaven.com/a/rainforest_trail",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/rainforest_trail.jpg",
+    "md5": "49d096d86ce66b36f70f2601ca2adc0e",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ],
+    "processing": "Resized tonemapped photographic equirectangular panorama"
+  },
+  {
+    "id": "forest_grove",
+    "name": "Forest Grove",
+    "authors": {
+      "Dimitrios Savva": "Photography",
+      "Jarod Guest": "Processing"
+    },
+    "source": "https://polyhaven.com/a/forest_grove",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/forest_grove.jpg",
+    "md5": "abd435e3b75442e5ba017c8ef5b620b5",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ],
+    "processing": "Resized tonemapped photographic equirectangular panorama"
+  },
+  {
+    "id": "snowy_forest_path_01",
+    "name": "Snowy Forest Path 01",
+    "authors": {
+      "Oliksiy Yakovlyev": "All"
+    },
+    "source": "https://polyhaven.com/a/snowy_forest_path_01",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/snowy_forest_path_01.jpg",
+    "md5": "22d924679883d5ed61c6eab772c0adc4",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ],
+    "processing": "Resized tonemapped photographic equirectangular panorama"
+  },
+  {
+    "id": "autumn_forest_04",
+    "name": "Autumn Forest 04",
+    "authors": {
+      "Alexander Scholten": "All"
+    },
+    "source": "https://polyhaven.com/a/autumn_forest_04",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/autumn_forest_04.jpg",
+    "md5": "73934a9ba5cbed096c1a79064bfbf863",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ],
+    "processing": "Resized tonemapped photographic equirectangular panorama"
+  },
+  {
+    "id": "secluded_beach",
+    "name": "Secluded Beach",
+    "authors": {
+      "Greg Zaal": "All",
+      "Rico Cilliers": "Backplates"
+    },
+    "source": "https://polyhaven.com/a/secluded_beach",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/secluded_beach.jpg",
+    "md5": "a2b0081194aa71ed7b0b65835c17f451",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ],
+    "processing": "Resized tonemapped photographic equirectangular panorama"
+  },
+  {
+    "id": "phalzer_forest_01",
+    "source": "https://polyhaven.com/a/phalzer_forest_01",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/phalzer_forest_01.jpg",
+    "md5": "48b75b0f597981a1b2b17629b553b849",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ]
+  },
+  {
+    "id": "kloofendal_48d_partly_cloudy_puresky",
+    "source": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/kloofendal_48d_partly_cloudy_puresky.jpg",
+    "md5": "3f2b19fa9c14943b34e5d4f480ba13ba",
+    "originalDimensions": [
+      8192,
+      4096
+    ],
+    "localDimensions": [
+      4096,
+      2048
+    ]
+  }
+]

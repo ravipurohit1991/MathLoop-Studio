@@ -1,0 +1,192 @@
+{
+  "format": "mathloop-story",
+  "version": 1,
+  "story": "polar-rose",
+  "title": "One equation. A living flower.",
+  "loop": true,
+  "chapters": [
+    {
+      "id": "seed",
+      "duration": 3,
+      "title": [
+        "Begin with",
+        "a circle."
+      ],
+      "caption": "A constant radius. One complete turn."
+    },
+    {
+      "id": "modulate",
+      "duration": 5,
+      "title": [
+        "Let the",
+        "radius change."
+      ],
+      "caption": "A cosine wave pulls the curve inward."
+    },
+    {
+      "id": "draw",
+      "duration": 8,
+      "title": [
+        "A rose.",
+        "One equation."
+      ],
+      "caption": "Follow the point as the angle increases."
+    },
+    {
+      "id": "reveal",
+      "duration": 3,
+      "title": [
+        "Repeat.",
+        "Add colour."
+      ],
+      "caption": "The same rose, rotated and scaled."
+    },
+    {
+      "id": "perform",
+      "duration": 7,
+      "title": [
+        "Maths,",
+        "in bloom."
+      ],
+      "caption": "Small rotations bring the pattern to life."
+    },
+    {
+      "id": "outro",
+      "duration": 4,
+      "title": [
+        "Begin with",
+        "a circle."
+      ],
+      "caption": "A constant radius. One complete turn."
+    }
+  ],
+  "tracks": {
+    "modulation": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "modulate",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "modulate",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.9
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "trace": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "linear"
+      }
+    ],
+    "bloom": [
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.6
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ]
+  },
+  "theme": {
+    "background": "#171625",
+    "ink": "#f4eee0",
+    "accent": "#eeb88d",
+    "guide": "#b3a8db",
+    "glow": "#423249",
+    "mid": "#242139"
+  },
+  "params": {
+    "petals": 5,
+    "layers": 9
+  },
+  "audio": {
+    "enabled": true
+  },
+  "export": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "samples": 2,
+    "shutter": 0.32,
+    "crf": 14,
+    "preset": "slow"
+  },
+  "seed": 0
+}

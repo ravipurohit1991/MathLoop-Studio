@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fourier Aquarium · 360° cinema</title>
+  <link rel="stylesheet" href="/viewer.css">
+</head>
+<body>
+  <header><a href="/">mathloop<span> / 360° cinema</span></a><a class="download" href="/video.mp4" download>Download MP4 ↗</a></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow"></p><h1></h1></div><p id="lead"></p></div>
+    <div class="view-format"><div role="group" aria-label="Viewing format"><button data-format="wide" aria-pressed="true">Wide 16:9</button><button data-format="portrait" aria-pressed="false">Portrait 9:16</button></div><p id="format-note">Choose your viewing window. Drag to explore in either format.</p></div>
+    <section class="cinema" aria-label="360 degree video player">
+      <canvas id="view" tabindex="0" aria-label="Panorama. Drag to look around; arrow keys to turn; plus and minus to zoom."></canvas>
+      <div class="view-tools"><span id="direction">Facing the whale</span><button id="fullscreen" aria-label="Enter fullscreen">⛶</button></div>
+      <div class="controls">
+        <button id="play" disabled>Play</button><button id="sound" disabled>Sound on</button>
+        <input id="seek" type="range" min="0" max="20" value="0" step="0.01" aria-label="Video time" disabled>
+        <output id="time">0:00 / 0:20</output><button id="reset">Reset view</button>
+      </div>
+      <p id="status" role="status">Loading the film…</p>
+    </section>
+    <nav aria-label="Look at an exhibit"></nav>
+    <div class="audio-mode"><label for="audio-mode">Listening mode</label> <select id="audio-mode"><option value="spatial">Spatial mix</option><option value="focus" disabled>Focus · hear what you face</option></select><p id="audio-note"></p></div>
+    <footer><p>Drag to look · Scroll to zoom · Arrow keys to turn</p><p>You are watching the exported MP4. Every direction is part of the film.</p></footer>
+  </main>
+  <video id="film" src="/video.mp4" preload="auto" muted playsinline loop hidden></video>
+  <script id="stage" type="application/json">{"title":"Inside a Fourier aquarium.","eyebrow":"A LITTLE OCEAN, ALL AROUND YOU","lead":"Three sculptures. One world.","exhibits":[[0,"the whale"],[120,"the manta"],[-120,"the golden knot"]]}</script>
+  <script type="module" src="/viewer.js"></script>
+  <!--audio-config-->
+</body>
+</html>

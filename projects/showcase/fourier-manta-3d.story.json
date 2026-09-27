@@ -1,0 +1,555 @@
+{
+  "format": "mathloop-story",
+  "version": 1,
+  "story": "fourier-manta-3d",
+  "title": "Manta Ray: Fourier in 3D",
+  "loop": true,
+  "chapters": [
+    {
+      "id": "hook",
+      "duration": 5,
+      "title": [
+        "Manta Ray.",
+        "Fourier in 3D."
+      ],
+      "caption": "One finished creature. Every contour drawn by circles."
+    },
+    {
+      "id": "seed",
+      "duration": 4.6000000000000005,
+      "title": [
+        "A circle.",
+        "A new dimension."
+      ],
+      "caption": "What if the drawing could leave the page?"
+    },
+    {
+      "id": "combine",
+      "duration": 7.666666666666667,
+      "title": [
+        "Turn circles",
+        "through space."
+      ],
+      "caption": "Each rotating tip carries the next circle."
+    },
+    {
+      "id": "draw",
+      "duration": 20.333333333333336,
+      "title": [
+        "Curve by curve,",
+        "a manta ray."
+      ],
+      "caption": "One ring becomes many. Each new curve brings the shape to life."
+    },
+    {
+      "id": "reveal",
+      "duration": 6.133333333333334,
+      "title": [
+        "Give the",
+        "curves a skin."
+      ],
+      "caption": "Join neighbouring contours. Let the light find them."
+    },
+    {
+      "id": "perform",
+      "duration": 12.266666666666667,
+      "title": [
+        "Manta Ray.",
+        "Fourier in 3D."
+      ],
+      "caption": "A wave travels outward. The wings follow."
+    },
+    {
+      "id": "outro",
+      "duration": 4,
+      "title": [
+        "Manta Ray.",
+        "Fourier in 3D."
+      ],
+      "caption": "One finished creature. Every contour drawn by circles."
+    }
+  ],
+  "tracks": {
+    "terms": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 40,
+        "ease": "smooth"
+      }
+    ],
+    "study": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.85
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0.08000000000000007
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "construction": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "linear"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "skin": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.16
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.3
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.62
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.82
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "life": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "orbit": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "linear"
+      }
+    ],
+    "showcase": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "hold"
+      }
+    ],
+    "guideOpacity": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 0.3,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.16
+        },
+        "value": 0.3,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.3
+        },
+        "value": 0.8,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.62
+        },
+        "value": 0.8,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.82
+        },
+        "value": 0.3,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 0.3,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 0.3,
+        "ease": "smooth"
+      }
+    ],
+    "wire": [
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.16
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.3
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.62
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "hook",
+          "progress": 0.82
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ]
+  },
+  "theme": {
+    "background": "#141126",
+    "ink": "#fff0e7",
+    "accent": "#b4a3e9",
+    "guide": "#e3bcdb",
+    "mid": "#24213c",
+    "glow": "#41405e"
+  },
+  "params": {
+    "cameraYaw": -34,
+    "cameraPitch": -38,
+    "orbitAmount": 30,
+    "zoom": 1.1,
+    "guideMode": "circles",
+    "wireframe": false
+  },
+  "audio": {
+    "enabled": true,
+    "bars": 32,
+    "seed": 417,
+    "transpose": 2,
+    "tempoFeel": "drift",
+    "transitions": [
+      "seed",
+      "draw",
+      "reveal",
+      "perform"
+    ]
+  },
+  "export": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "samples": 2,
+    "shutter": 0.32,
+    "crf": 14,
+    "preset": "slow"
+  },
+  "seed": 0
+}

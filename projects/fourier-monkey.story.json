@@ -1,0 +1,658 @@
+{
+  "format": "mathloop-story",
+  "version": 1,
+  "story": "fourier-monkey",
+  "title": "From one circle to a Fourier monkey",
+  "loop": true,
+  "chapters": [
+    {
+      "id": "seed",
+      "duration": 3.75,
+      "title": [
+        "Start with",
+        "one circle."
+      ],
+      "caption": "A rotating arrow traces a circle."
+    },
+    {
+      "id": "combine",
+      "duration": 5.625,
+      "title": [
+        "Add a",
+        "few more."
+      ],
+      "caption": "Each tip carries the next circle."
+    },
+    {
+      "id": "contour",
+      "duration": 7.5,
+      "title": [
+        "A contour",
+        "takes shape."
+      ],
+      "caption": "Together, their rotations draw a curve."
+    },
+    {
+      "id": "drawBody",
+      "duration": 7.5,
+      "title": [
+        "Piece by piece,",
+        "a monkey."
+      ],
+      "caption": "One contour at a time. Watch the tip."
+    },
+    {
+      "id": "drawLimbs",
+      "duration": 9.375,
+      "title": [
+        "Keep the",
+        "circles turning."
+      ],
+      "caption": "Arms, legs, and one very curly tail."
+    },
+    {
+      "id": "reveal",
+      "duration": 1.875,
+      "title": [
+        "A little",
+        "colour."
+      ],
+      "caption": "The same curves. A warmer character."
+    },
+    {
+      "id": "perform",
+      "duration": 6.375,
+      "title": [
+        "A monkey.",
+        "Made of",
+        "circles."
+      ],
+      "caption": "A little maths. A lot of personality."
+    },
+    {
+      "id": "outro",
+      "duration": 3,
+      "title": [
+        "Start with",
+        "one circle."
+      ],
+      "caption": "A rotating arrow traces a circle."
+    }
+  ],
+  "tracks": {
+    "terms": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.12444444444444448
+        },
+        "value": 2,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.3333333333333333
+        },
+        "value": 2,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.4577777777777778
+        },
+        "value": 3,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.6666666666666666
+        },
+        "value": 3,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.8799999999999999
+        },
+        "value": 8,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0
+        },
+        "value": 8,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.15666666666666676
+        },
+        "value": 16,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.25
+        },
+        "value": 16,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.4099999999999999
+        },
+        "value": 32,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.5
+        },
+        "value": 32,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.67
+        },
+        "value": 64,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.16666666666666666
+        },
+        "value": 64,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.9000000000000009
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "studyZoom": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.65
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawBody",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.2666666666666657
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.9333333333333323
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "studyOpacity": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawBody",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.3333333333333333
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "studyRigFade": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.9433333333333332
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawBody",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "hold"
+      }
+    ],
+    "studyLabel": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.65
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "contour",
+          "progress": 0.83
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.5
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.9000000000000009
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "artOpacity": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawBody",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "hold"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.3333333333333333
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "fill": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.3333333333333333
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "life": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0.5
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0.8823529411764706
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.08333333333333333
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "motionPhase": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 18.84955592153876,
+        "ease": "linear"
+      }
+    ],
+    "wave": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0.8
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0.058823529411764705
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 0.8431372549019608
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "faceOpacity": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawBody",
+          "progress": 0.9566666666666668
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawLimbs",
+          "progress": 0.024000000000000153
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.3333333333333333
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "branch": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawLimbs",
+          "progress": 0.07733333333333349
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "drawLimbs",
+          "progress": 0.2906666666666668
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.3333333333333333
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ]
+  },
+  "theme": {
+    "background": "#0c1923",
+    "ink": "#f4eee0",
+    "accent": "#eab182",
+    "guide": "#93c7be"
+  },
+  "params": {},
+  "audio": {
+    "enabled": true,
+    "bars": 24,
+    "seed": 73019,
+    "transitions": [
+      "combine",
+      "contour",
+      "drawBody",
+      "reveal",
+      "perform"
+    ],
+    "greeting": "perform"
+  },
+  "export": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "samples": 2,
+    "shutter": 0.32,
+    "crf": 14,
+    "preset": "slow"
+  },
+  "seed": 0
+}

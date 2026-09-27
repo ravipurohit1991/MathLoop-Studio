@@ -1,0 +1,95 @@
+// Browser integration checks for editing, persistence, SVG import and export.
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+import { createServer } from 'vite';
+import { mkdir, readFile } from 'node:fs/promises';
+import { STORY_LIST } from '../src/stories/index.js';
+import { SCORE_CHOICES } from '../src/story/score.js';
+const server=await createServer({server:{port:5202,strictPort:true}});await server.listen();
+const browser=await chromium.launch({headless:true,channel:process.env.MATHLOOP_BROWSER??(process.platform==='win32'?'msedge':undefined)});
+const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+const out='out/story-refactor/studio';await mkdir(out,{recursive:true});
+try{
+  await page.goto('http://127.0.0.1:5202/');await page.getByRole('heading',{name:'Give your maths a story.'}).waitFor();
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true,'desktop horizontal overflow');
+  const layout=await page.evaluate(()=>({header:document.querySelector('.story-header').getBoundingClientRect().bottom,workspace:document.querySelector('.story-workspace').getBoundingClientRect().top}));
+  assert.ok(layout.header<layout.workspace,'header precedes the editing workspace');
+  await page.screenshot({path:`${out}/desktop.png`,fullPage:true});
+  await page.getByLabel('Chapter title',{exact:true}).fill('Start small.\nMake something.');
+  await page.getByLabel('Chapter duration',{exact:true}).fill('4');
+  assert.equal(await page.getByLabel('Total length',{exact:true}).inputValue(),'54');
+  await page.reload();await page.getByLabel('Chapter title',{exact:true}).waitFor();assert.match(await page.getByLabel('Chapter title',{exact:true}).inputValue(),/Start small/);
+  await page.getByLabel('Play preview',{exact:true}).click();await page.waitForFunction(()=>Number(document.querySelector('[aria-label="Story playhead"]').value)>.1);await page.getByLabel('Pause preview',{exact:true}).click();
+  await page.getByLabel('Story template').selectOption('polar-rose');await page.getByLabel('Total length',{exact:true}).fill('2');
+  await page.getByLabel('Delivery size').selectOption('360');await page.getByLabel('Frame rate').selectOption('24');
+  const saved=page.waitForEvent('download');await page.getByRole('button',{name:'Save project',exact:true}).click();const projectDownload=await saved;await projectDownload.saveAs(`${out}/edited.story.json`);
+  const project=JSON.parse(await readFile(`${out}/edited.story.json`,'utf8'));assert.equal(project.story,'polar-rose');assert.equal(project.chapters.reduce((s,c)=>s+c.duration,0),2);
+  const downloaded=page.waitForEvent('download',{timeout:120000});await page.getByRole('button',{name:/Export MP4/}).click();const mp4=await downloaded;await mp4.saveAs(`${out}/browser-export.mp4`);
+  await page.getByRole('button',{name:/Export MP4/}).waitFor();
+  await page.getByLabel('Total length',{exact:true}).fill('10');
+  await page.getByRole('button',{name:/Export MP4/}).click();
+  await page.getByRole('button',{name:'Cancel export',exact:true}).click();
+  await page.getByRole('status').filter({hasText:'Export cancelled.'}).waitFor();
+  assert.equal(await page.getByRole('alert').count(),0,'cancellation is a normal outcome');
+  await page.getByLabel('Total length',{exact:true}).fill('2');
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 10 85 C 0 30 50 0 90 10 C 100 60 60 100 10 85 Z"/></svg>';
+  await page.locator('input[accept=".svg"]').setInputFiles({name:'leaf.svg',mimeType:'image/svg+xml',buffer:Buffer.from(svg)});
+  await page.getByRole('status').filter({hasText:'contours imported'}).waitFor();assert.equal(await page.getByLabel('Story template').inputValue(),'custom-fourier');
+  await page.reload();await page.getByLabel('Story template').waitFor();assert.equal(await page.getByLabel('Story template').inputValue(),'custom-fourier');
+  assert.deepEqual(await page.getByLabel('Story template').locator('option').allInnerTexts(),
+    [...STORY_LIST.map(s=>s.title),'Your SVG artwork'],'all authored films and the imported artwork are offered');
+  await page.getByRole('button',{name:'3D authored films',exact:true}).click();
+  assert.equal(await page.getByRole('button',{name:/Load film:/}).count(),STORY_LIST.filter(s=>s.dimension==='3d').length,'the 3D filter shows every 3D film');
+  await page.getByRole('button',{name:'Load film: A whale, drawn through space.',exact:true}).click();
+  assert.equal(await page.getByLabel('Story template').inputValue(),'fourier-whale-3d');
+  await page.getByLabel('Construction guides').selectOption('spheres');
+  await page.getByLabel('Parameter cameraYaw',{exact:true}).fill('35');
+  await page.getByLabel('Show surface mesh',{exact:true}).check();
+  await page.reload();await page.getByLabel('Construction guides').waitFor();
+  assert.equal(await page.getByLabel('Construction guides').inputValue(),'spheres');
+  assert.equal(await page.getByLabel('Parameter cameraYaw',{exact:true}).inputValue(),'35');
+  assert.equal(await page.getByLabel('Show surface mesh',{exact:true}).isChecked(),true);
+  // Export the 3D construction and performance through the actual browser encoder.
+  await page.getByLabel('Total length',{exact:true}).fill('2');
+  await page.getByLabel('Delivery size').selectOption('360');await page.getByLabel('Frame rate').selectOption('24');
+  const spatialDownload=page.waitForEvent('download',{timeout:120000});await page.getByRole('button',{name:/Export MP4/}).click();
+  const spatialMp4=await spatialDownload;await spatialMp4.saveAs(`${out}/browser-3d-export.mp4`);
+  await page.getByRole('button',{name:/Export MP4/}).waitFor();
+  await page.getByLabel('Story playhead').fill('1.5');
+  await page.screenshot({path:`${out}/spatial-desktop.png`,fullPage:true});
+  await page.getByRole('button',{name:'2D authored films',exact:true}).click();
+  assert.equal(await page.getByRole('button',{name:/Load film:/}).count(),STORY_LIST.filter(s=>s.dimension==='2d').length,'the 2D filter shows every 2D film');
+  await page.getByRole('button',{name:'Load film: The butterfly effect. In circles.',exact:true}).click();
+  assert.equal(await page.getByLabel('Story template').inputValue(),'fourier-butterfly');
+  assert.equal(await page.getByLabel('Construction guides').count(),0);
+  for(const id of ['fourier-owl','fourier-fox','fourier-turtle-3d','fourier-lotus-3d']){
+    await page.getByLabel('Story template').selectOption(id);
+    assert.equal(await page.getByLabel('Story template').inputValue(),id,'new authored film loads');
+    assert.equal(await page.getByLabel('Total length',{exact:true}).inputValue(),'60');
+    await page.getByLabel('Story playhead').fill('50');
+    assert.equal(await page.getByRole('alert').count(),0,`${id} renders without errors`);
+  }
+  await page.getByLabel('Story template').selectOption('fourier-monkey');
+  // The score picker: every score is offered, one is auditioned, and the choice survives a reload.
+  await page.getByLabel('Total length',{exact:true}).fill('4');
+  const card=name=>page.getByRole('button',{name:new RegExp('^'+name)});
+  assert.equal(await page.locator('.score-card').count(),SCORE_CHOICES.length+1,'all scores and silence');
+  assert.equal(await card('Driftwood').getAttribute('aria-pressed'),'true','the film opens with the score it was written for');
+  await card('Still Water').click();
+  await page.locator('.score-card.playing').waitFor({timeout:60000});
+  assert.equal(await card('Still Water').getAttribute('aria-pressed'),'true','auditioning a score chooses it');
+  await page.getByLabel('Score volume').fill('0.5');
+  await page.reload();await page.getByLabel('Story template').waitFor();
+  assert.equal(await card('Still Water').getAttribute('aria-pressed'),'true','the chosen score is remembered');
+  assert.equal(await page.getByLabel('Score volume').inputValue(),'0.5','the volume is remembered');
+  await card('No score').click();
+  assert.equal(await card('No score').getAttribute('aria-pressed'),'true','a film can be left silent');
+  assert.equal(await page.locator('.score-card.selected').count(),1,'exactly one choice at a time');
+  await card('Paper Lanterns').click();
+  await page.locator('.score-card.playing').waitFor({timeout:60000});
+  await page.screenshot({path:`${out}/scores.png`,fullPage:true});
+  await page.setViewportSize({width:390,height:844});await page.screenshot({path:`${out}/mobile.png`,fullPage:true});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true,'mobile horizontal overflow');
+  assert.deepEqual(errors,[]);assert.equal(await page.getByRole('alert').count(),0);
+  console.log('PASS: chapter editing, retiming, seek/play, autosave, project download, SVG round trip, film collection filters, 3D camera/guide persistence, score audition and choice, 2D and 3D MP4 with audio, responsive layout.');
+}finally{await browser.close();await server.close();}

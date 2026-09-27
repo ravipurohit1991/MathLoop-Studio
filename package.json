@@ -1,0 +1,84 @@
+{
+  "name": "mathloop",
+  "version": "0.1.0",
+  "description": "Maths into art, told in chapters. Author, preview and export reproducible story films.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravipurohit1991/MathLoop-Studio.git"
+  },
+  "homepage": "https://github.com/ravipurohit1991/MathLoop-Studio#readme",
+  "bugs": {
+    "url": "https://github.com/ravipurohit1991/MathLoop-Studio/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./story": "./src/story/index.js",
+    "./stories": "./src/stories/index.js",
+    "./math": "./src/math/index.js",
+    "./audio": "./src/audio/index.js",
+    "./node": "./src/node/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cli"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/story.test.mjs tests/spatial.test.mjs tests/spherical.test.mjs tests/spatial.audio.mjs",
+    "test:story": "node --test tests/story.test.mjs",
+    "test:studio": "node tests/studio.story.mjs",
+    "story": "node cli/story.mjs",
+    "story:preview": "node cli/story.mjs --preview",
+    "story:render": "node cli/story.mjs",
+    "monkey:preview": "node cli/monkey-film.mjs --preview",
+    "monkey:render": "node cli/monkey-film.mjs",
+    "collection": "node cli/collection.mjs",
+    "collection:preview": "node cli/collection.mjs --preview",
+    "360:render": "node cli/story.mjs --story fourier-aquarium-360 --out out/360-aquarium",
+    "360:preview": "node cli/preview360.mjs",
+    "360:short": "node cli/story.mjs --story fourier-aquarium-short --out out/360-aquarium-short",
+    "360:spatial": "node cli/spatial-demo.mjs",
+    "nature:render": "node cli/nature-worlds.mjs",
+    "nature:preview": "node cli/nature-worlds.mjs --preview",
+    "test:nature": "node tests/nature.browser.mjs",
+    "test:360": "node --test tests/spherical.test.mjs",
+    "test:360-audio": "node --test tests/spatial.audio.mjs",
+    "test:360-spatial-player": "node tests/spatial.playback.mjs",
+    "test:360-player": "node tests/spherical.browser.mjs",
+    "360:lanterns": "node cli/story.mjs --story fourier-lanterns-360 --out out/360-lanterns",
+    "360:observatory": "node cli/story.mjs --story fourier-observatory-360 --out out/360-observatory",
+    "test:studio-360": "node tests/studio.stage.mjs"
+  },
+  "dependencies": {
+    "mediabunny": "^1.55.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.7"
+  },
+  "optionalDependencies": {
+    "@napi-rs/canvas": "^1.0.8",
+    "playwright": "^1.49.1"
+  },
+  "keywords": [
+    "story",
+    "film",
+    "video",
+    "fourier",
+    "generative",
+    "canvas",
+    "shorts",
+    "webcodecs"
+  ]
+}

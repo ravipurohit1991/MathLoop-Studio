@@ -1,0 +1,335 @@
+{
+  "format": "mathloop-story",
+  "version": 1,
+  "story": "fourier-lotus-3d",
+  "title": "A bloom in three dimensions.",
+  "loop": true,
+  "chapters": [
+    {
+      "id": "seed",
+      "duration": 3,
+      "title": [
+        "A circle.",
+        "A new dimension."
+      ],
+      "caption": "What if the drawing could leave the page?"
+    },
+    {
+      "id": "combine",
+      "duration": 5,
+      "title": [
+        "Turn circles",
+        "through space."
+      ],
+      "caption": "Each rotating tip carries the next circle."
+    },
+    {
+      "id": "draw",
+      "duration": 10,
+      "title": [
+        "Curve by curve,",
+        "a lotus."
+      ],
+      "caption": "One ring becomes many. Each new curve brings the shape to life."
+    },
+    {
+      "id": "reveal",
+      "duration": 4,
+      "title": [
+        "Rose. Ivory.",
+        "A heart of gold."
+      ],
+      "caption": "Light turns the reconstructed rings into curved petals."
+    },
+    {
+      "id": "perform",
+      "duration": 8,
+      "title": [
+        "A bloom in",
+        "three dimensions."
+      ],
+      "caption": "Three rings of petals. One slow, authored breath."
+    },
+    {
+      "id": "outro",
+      "duration": 4,
+      "title": [
+        "A circle.",
+        "A new dimension."
+      ],
+      "caption": "What if the drawing could leave the page?"
+    }
+  ],
+  "tracks": {
+    "terms": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 1
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "study": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 1
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.65
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "construction": [
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "linear"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.7
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "skin": [
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.45
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "life": [
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.5
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "orbit": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 1
+        },
+        "value": 0.15,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 1
+        },
+        "value": 0.55,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ]
+  },
+  "theme": {
+    "background": "#221c2c",
+    "ink": "#f7e5da",
+    "accent": "#e6a2b9",
+    "guide": "#92bbaa",
+    "mid": "#392e45",
+    "glow": "#5f425a",
+    "pollen": "#e7bd68"
+  },
+  "params": {
+    "cameraYaw": -14,
+    "cameraPitch": -32,
+    "orbitAmount": 32,
+    "zoom": 1.15,
+    "guideMode": "circles",
+    "wireframe": false
+  },
+  "audio": {
+    "enabled": true,
+    "bars": 14,
+    "seed": 1537,
+    "transpose": 5,
+    "score": "aurora-glass",
+    "tempoFeel": "drift",
+    "level": 0.5,
+    "transitions": [
+      "combine",
+      "draw",
+      "reveal",
+      "perform"
+    ]
+  },
+  "export": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "samples": 2,
+    "shutter": 0.32,
+    "crf": 14,
+    "preset": "slow"
+  },
+  "seed": 0
+}

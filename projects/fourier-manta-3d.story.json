@@ -1,0 +1,331 @@
+{
+  "format": "mathloop-story",
+  "version": 1,
+  "story": "fourier-manta-3d",
+  "title": "Manta Ray: Fourier in 3D",
+  "loop": true,
+  "chapters": [
+    {
+      "id": "seed",
+      "duration": 3,
+      "title": [
+        "A circle.",
+        "A new dimension."
+      ],
+      "caption": "What if the drawing could leave the page?"
+    },
+    {
+      "id": "combine",
+      "duration": 5,
+      "title": [
+        "Turn circles",
+        "through space."
+      ],
+      "caption": "Each rotating tip carries the next circle."
+    },
+    {
+      "id": "draw",
+      "duration": 10,
+      "title": [
+        "Curve by curve,",
+        "a manta ray."
+      ],
+      "caption": "One ring becomes many. Each new curve brings the shape to life."
+    },
+    {
+      "id": "reveal",
+      "duration": 4,
+      "title": [
+        "Give the",
+        "curves a skin."
+      ],
+      "caption": "Join neighbouring contours. Let the light find them."
+    },
+    {
+      "id": "perform",
+      "duration": 8,
+      "title": [
+        "Manta Ray.",
+        "Fourier in 3D."
+      ],
+      "caption": "A wave travels outward. The wings follow."
+    },
+    {
+      "id": "outro",
+      "duration": 4,
+      "title": [
+        "A circle.",
+        "A new dimension."
+      ],
+      "caption": "What if the drawing could leave the page?"
+    }
+  ],
+  "tracks": {
+    "terms": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 1
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 40,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "study": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 0.85
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0.08
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.65
+        },
+        "value": 1,
+        "ease": "smooth"
+      }
+    ],
+    "construction": [
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "linear"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.7
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "skin": [
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.45
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "life": [
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "reveal",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 0.5
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ],
+    "orbit": [
+      {
+        "at": {
+          "chapter": "seed",
+          "progress": 0
+        },
+        "value": 0,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "combine",
+          "progress": 1
+        },
+        "value": 0.15,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "draw",
+          "progress": 1
+        },
+        "value": 0.55,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "perform",
+          "progress": 1
+        },
+        "value": 1,
+        "ease": "smooth"
+      },
+      {
+        "at": {
+          "chapter": "outro",
+          "progress": 1
+        },
+        "value": 0,
+        "ease": "smooth"
+      }
+    ]
+  },
+  "theme": {
+    "background": "#141126",
+    "ink": "#fff0e7",
+    "accent": "#b4a3e9",
+    "guide": "#e3bcdb",
+    "mid": "#24213c",
+    "glow": "#41405e"
+  },
+  "params": {
+    "cameraYaw": -34,
+    "cameraPitch": -38,
+    "orbitAmount": 30,
+    "zoom": 1.1,
+    "guideMode": "circles",
+    "wireframe": false
+  },
+  "audio": {
+    "enabled": true,
+    "bars": 12,
+    "seed": 417,
+    "transpose": 2,
+    "tempoFeel": "drift",
+    "transitions": [
+      "draw",
+      "reveal",
+      "perform"
+    ]
+  },
+  "export": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "samples": 2,
+    "shutter": 0.32,
+    "crf": 14,
+    "preset": "slow"
+  },
+  "seed": 0
+}
