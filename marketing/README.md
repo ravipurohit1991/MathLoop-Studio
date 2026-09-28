@@ -4,6 +4,8 @@ The 114-second landscape trailer introduces the real application, explains its
 code model, and shows authored films, SVG reconstruction, synthesized scores,
 360° stages and Nature Worlds. It uses the application's own renderers, captured
 UI, an Aurora Glass music bed, and natural neural English narration.
+The narration lead-in is applied equally to both channels so speech remains
+centered without a delayed duplicate in one ear.
 
 ## Ready to publish
 
@@ -19,7 +21,7 @@ Generated deliverables live in `out/launch/` (excluded from Git):
 | `voice.wav`, `music.wav`, `mix.wav` | Separate narration, original music and final mix |
 
 Download published MP4s from the repository's
-[v0.1.0 release](https://github.com/ravipurohit1991/MathLoop-Studio/releases/tag/v0.1.0).
+[latest release](https://github.com/ravipurohit1991/MathLoop-Studio/releases/latest).
 The release also includes a 60-second portrait whale film, a 20-second spherical
 aquarium and its 20-second portrait companion. Large generated files stay out of
 the Git history.

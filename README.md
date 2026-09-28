@@ -5,7 +5,7 @@ procedural soundtrack, and export a film — or build an entire 360° world.
 
 ![MathLoop Studio: maths into movies, with a Fourier whale and butterfly](docs/images/launch-banner.jpg)
 
-[Download videos & launch trailer](https://github.com/ravipurohit1991/MathLoop-Studio/releases/tag/v0.1.0)
+[Download videos & launch trailer](https://github.com/ravipurohit1991/MathLoop-Studio/releases/latest)
 · [Quick start](#quick-start) · [Authoring guide](docs/story-authoring.md)
 · [360° guide](docs/360-video.md) · [MIT license](LICENSE)
 

@@ -172,7 +172,9 @@ for (const scene of spec.scenes) for (let part = 0; part < 2; part++) {
   const speed = Math.max(1, length / (target - .35));
   if (speed > 1.35) throw new Error(`Narration too long for ${scene.id}; shorten the script.`);
   const output = `${out}/narration/padded-${scene.id}-${part}.wav`;
-  command('ffmpeg', ['-v', 'error', '-y', '-i', input, '-af', `atempo=${speed},adelay=100,apad`, '-t', String(target), '-ar', '48000', '-ac', '2', output]);
+  // Apply the lead-in to every channel. A single adelay value without all=1
+  // delays only the left channel of stereo narration, creating a 100 ms echo.
+  command('ffmpeg', ['-v', 'error', '-y', '-i', input, '-af', `atempo=${speed},adelay=100:all=1,apad`, '-t', String(target), '-ar', '48000', '-ac', '2', output]);
   clips.push(`file 'narration/padded-${scene.id}-${part}.wav'`);
 }
 await writeFile(`${out}/narration-concat.txt`, clips.join('\n'));

@@ -1,6 +1,10 @@
-# MathLoop Studio 0.1.0
+# MathLoop Studio 0.1.1
 
 Turn mathematical drawings into films, then build a world around them.
+
+The launch trailer includes the corrected narration mix: both speech channels
+are synchronized, removing the unintended 100 ms stereo echo. Video, captions
+and the 1:54 runtime are unchanged.
 
 - Story Studio: 15 authored films, editable chapters, SVG import and eight
   synthesized scores, including Whale Song.
