@@ -20,4 +20,5 @@ try {
     }
   }
 } finally { $speech.Dispose() }
+@{ provider = 'Offline Windows speech synthesis'; voice = $Voice; kind = 'system synthetic narration' } | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $audioDir 'voice.json') -Encoding utf8
 Write-Output 'Narration clips written to out/launch/narration.'

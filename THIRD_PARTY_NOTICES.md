@@ -14,5 +14,7 @@ source. Whale Song uses synthesized calls, not a wildlife recording.
 
 Dependencies retain their respective licenses; see the installed packages for
 their notices. Operating-system fonts and speech engines used during rendering
-are not bundled with this repository. The launch trailer uses a local Windows
-synthetic voice and the application's Aurora Glass score.
+are not bundled with this repository. The launch trailer uses Microsoft's
+Andrew Multilingual neural voice via the optional edge-tts tool, and the
+application's Aurora Glass score. The public narration script is sent to the
+online speech service when using that helper; the Studio itself does not use it.

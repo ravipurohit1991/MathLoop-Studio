@@ -14,7 +14,7 @@ Turn mathematical drawings into films, then build a world around them.
 
 | Download | Format |
 | --- | --- |
-| `mathloop-studio-trailer-1080p.mp4` | Narrated 90-second landscape introduction, 1080p30 |
+| `mathloop-studio-trailer-1080p.mp4` | 114-second landscape introduction with natural neural narration, 1080p30 |
 | `fourier-whale-3d-60s.mp4` | 60-second portrait whale film with synthesized Whale Song |
 | `fourier-aquarium-360-20s.mp4` | Spherical aquarium with projection metadata, 3840 × 1920 |
 | `fourier-aquarium-short-20s.mp4` | Guided portrait companion, 1080 × 1920 |
@@ -31,5 +31,5 @@ spatial audio. Use the native FFmpeg workflow for Nature Worlds on those
 systems. See `docs/360-audio.md` for the separate spatial-audio tools.
 
 Code: MIT. Nature photographs: Poly Haven CC0, with credits in the asset
-manifest. Launch narration: synthetic; music and mathematical artwork are
+manifest. Launch narration: Andrew Multilingual neural voice; music and mathematical artwork are
 generated from the source.

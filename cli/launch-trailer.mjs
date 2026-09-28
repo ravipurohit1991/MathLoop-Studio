@@ -1,7 +1,7 @@
 // Reproducible 1080p launch film, using the actual MathLoop renderers.
-// Run capture-launch.mjs and narrate-launch.ps1 first. See marketing/README.md.
+// Capture the UI and generate narration first. See marketing/README.md.
 import { createCanvas, loadImage, GlobalFonts } from '@napi-rs/canvas';
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
 import { spawn, execFileSync } from 'node:child_process';
 import { once } from 'node:events';
 import { getStory, STAGE_REELS } from '../src/stories/index.js';
@@ -13,7 +13,7 @@ import { createStage360World, drawStageViewport } from '../src/story/stage360.js
 import { registerStoryFonts } from '../src/node/renderStory.js';
 
 const spec = JSON.parse(await readFile('marketing/trailer.json', 'utf8'));
-const out = 'out/launch', preview = process.argv.includes('--preview');
+const out = 'out/launch', preview = process.argv.includes('--preview'), audioOnly = process.argv.includes('--audio-only');
 await mkdir(out, { recursive: true });
 await mkdir('docs/images', { recursive: true });
 await registerStoryFonts();
@@ -179,6 +179,32 @@ await writeFile(`${out}/narration-concat.txt`, clips.join('\n'));
 command('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', `${out}/narration-concat.txt`, '-af', 'loudnorm=I=-17:TP=-2:LRA=7', '-ar', '48000', '-ac', '2', `${out}/voice.wav`]);
 command('ffmpeg', ['-v', 'error', '-y', '-i', `${out}/voice.wav`, '-i', `${out}/music.wav`, '-filter_complex', `[1:a]volume=0.75,afade=t=in:d=1,afade=t=out:st=${duration-2}:d=2[m];[0:a][m]amix=inputs=2:normalize=0,alimiter=limit=0.89[a]`, '-map', '[a]', '-ar', '48000', `${out}/mix.wav`]);
 const output = `${out}/mathloop-studio-trailer-1080p.mp4`;
+if (audioOnly) {
+  const temporary = `${out}/trailer-remix.mp4`;
+  const existing = JSON.parse(command('ffprobe', ['-v', 'error', '-show_format', '-of', 'json', output]));
+  let videoInput = ['-i', output];
+  if (Math.abs(Number(existing.format.duration) - duration) > .1) {
+    if (!process.argv.includes('--retime')) throw new Error('Video timing differs. Render the full trailer, or use --retime with its saved video-timing.json.');
+    const previous = JSON.parse(await readFile(`${out}/video-timing.json`, 'utf8'));
+    if (Math.abs(previous.scenes.reduce((s, x) => s + x.duration, 0) - Number(existing.format.duration)) > .1) throw new Error('Saved timing does not describe the existing video.');
+    await mkdir(`${out}/retimed`, { recursive: true });
+    let start = 0; const segments = [];
+    for (const [i, scene] of spec.scenes.entries()) {
+      const old = previous.scenes[i];
+      if (old?.id !== scene.id || JSON.stringify(old.narration) !== JSON.stringify(scene.narration)) throw new Error('Changed script or scene order requires a full render.');
+      const name = `scene-${i}.mp4`;
+      console.log(`Retiming scene ${i + 1}: ${old.duration}s → ${scene.duration}s`);
+      command('ffmpeg', ['-v', 'error', '-y', '-ss', String(start), '-t', String(old.duration), '-i', output, '-an', '-vf', `setpts=${scene.duration / old.duration}*(PTS-STARTPTS),fps=${fps}`, '-t', String(scene.duration), '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-map_metadata', '-1', `${out}/retimed/${name}`]);
+      segments.push(`file 'retimed/${name}'`); start += old.duration;
+    }
+    await writeFile(`${out}/retimed-concat.txt`, segments.join('\n'));
+    videoInput = ['-f', 'concat', '-safe', '0', '-i', `${out}/retimed-concat.txt`];
+  }
+  command('ffmpeg', ['-v', 'error', '-y', ...videoInput, '-i', `${out}/mix.wav`, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-t', String(duration), '-movflags', '+faststart', '-map_metadata', '-1', '-metadata', `title=${spec.title}`, temporary]);
+  await rename(temporary, output);
+  for (const e of engines.values()) e.dispose();
+  console.log('Replaced narration and mix using the existing picture.');
+} else {
 const encoder = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${W}x${H}`, '-r', String(fps), '-i', 'pipe:0', '-i', `${out}/mix.wav`, '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-profile:v', 'high', '-pix_fmt', 'yuv420p', '-vf', 'scale=in_range=full:out_range=tv:out_color_matrix=bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-t', String(duration), '-movflags', '+faststart', '-map_metadata', '-1', '-metadata', `title=${spec.title}`, output], { windowsHide: true, stdio: ['pipe', 'ignore', 'pipe'] });
 let log = ''; encoder.stderr.on('data', data => log += data); encoder.stdin.on('error', () => {});
 const finished = new Promise((resolve, reject) => { encoder.on('error', reject); encoder.on('close', code => code === 0 ? resolve() : reject(new Error(log))); }); finished.catch(() => {});
@@ -193,8 +219,11 @@ try {
   }
   encoder.stdin.end(); await finished;
 } finally { for (const e of engines.values()) e.dispose(); if (encoder.exitCode === null) encoder.kill(); }
+}
 const probe = JSON.parse(command('ffprobe', ['-v', 'error', '-show_streams', '-show_format', '-of', 'json', output]));
+const voiceInfo = await readFile(`${out}/narration/voice.json`, 'utf8').then(JSON.parse).catch(() => ({ provider: 'Offline Windows speech synthesis' }));
 // Store portable verification data; ffprobe's full output embeds an absolute filename on some platforms.
-await writeFile(`${out}/verification.json`, JSON.stringify({ file: output.split('/').at(-1), duration: Number(probe.format.duration), streams: probe.streams.map(s => ({ type: s.codec_type, codec: s.codec_name, width: s.width, height: s.height, fps: s.r_frame_rate, sampleRate: s.sample_rate, channels: s.channels, frames: s.nb_frames })), narration: 'Offline Windows speech synthesis', sources: 'Current source renderers + captured local Studio UI' }, null, 2));
+await writeFile(`${out}/verification.json`, JSON.stringify({ file: output.split('/').at(-1), duration: Number(probe.format.duration), streams: probe.streams.map(s => ({ type: s.codec_type, codec: s.codec_name, width: s.width, height: s.height, fps: s.r_frame_rate, sampleRate: s.sample_rate, channels: s.channels, frames: s.nb_frames })), narration: voiceInfo, sources: 'Current source renderers + captured local Studio UI' }, null, 2));
 if (Math.abs(Number(probe.format.duration) - duration) > .1 || !probe.streams.some(s => s.width === W && s.height === H) || !probe.streams.some(s => s.codec_type === 'audio')) throw new Error('Trailer verification failed.');
 console.log(`Verified ${output}`);
+await writeFile(`${out}/video-timing.json`, JSON.stringify(spec, null, 2));

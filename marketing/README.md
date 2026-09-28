@@ -1,9 +1,9 @@
 # Launch kit
 
-The 90-second landscape trailer introduces the real application, explains its
+The 114-second landscape trailer introduces the real application, explains its
 code model, and shows authored films, SVG reconstruction, synthesized scores,
 360° stages and Nature Worlds. It uses the application's own renderers, captured
-UI, an Aurora Glass music bed, and offline synthetic English narration.
+UI, an Aurora Glass music bed, and natural neural English narration.
 
 ## Ready to publish
 
@@ -11,7 +11,7 @@ Generated deliverables live in `out/launch/` (excluded from Git):
 
 | File | Purpose |
 | --- | --- |
-| `mathloop-studio-trailer-1080p.mp4` | 1920 × 1080, 30 fps, H.264/AAC, 90 seconds; burned-in English captions |
+| `mathloop-studio-trailer-1080p.mp4` | 1920 × 1080, 30 fps, H.264/AAC, 114 seconds; burned-in English captions |
 | `mathloop-studio-trailer.en.srt` | Optional selectable YouTube captions with the same wording |
 | `youtube-thumbnail.jpg` | 1920 × 1080 YouTube thumbnail |
 | `storyboard.jpg` | Nine-scene visual review |
@@ -41,7 +41,29 @@ npm run dev
 node cli/capture-launch.mjs
 ```
 
-On Windows, generate narration with a built-in voice:
+For the release's neural narration, install Python and
+[uv](https://docs.astral.sh/uv/), then run:
+
+```sh
+uv run cli/narrate-launch.py --retime
+node cli/launch-trailer.mjs --preview
+node cli/launch-trailer.mjs
+```
+
+The optional helper uses Microsoft's Andrew Multilingual neural voice through
+[edge-tts](https://github.com/rany2/edge-tts). It sends the public trailer script
+to the online speech service; no API key is required. With `--retime`, scenes
+are extended where necessary so narration stays at its natural rate. Use
+`--voice` to select another available voice. This helper is separate from the
+local Studio application.
+
+For an already rendered trailer, `node cli/launch-trailer.mjs --audio-only`
+replaces the mix without encoding the picture again. Add `--retime` to adapt
+the existing scenes to longer narration using `out/launch/video-timing.json`
+from the previous render. Keep the script and scene order unchanged when
+reusing the picture, so its burned-in captions still match.
+
+For an offline Windows fallback, generate narration with a built-in voice:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File cli/narrate-launch.ps1
@@ -49,8 +71,8 @@ node cli/launch-trailer.mjs --preview
 node cli/launch-trailer.mjs
 ```
 
-The script selects Microsoft Zira Desktop by default. Pass `-Voice` to choose
-another installed voice. On other systems, provide WAV clips with matching
+The offline script selects Microsoft Zira Desktop by default. Pass `-Voice` to
+choose another installed voice. Alternatively, provide WAV clips with matching
 scene/part names in `out/launch/narration/`, for example `hook-0.wav`,
 `hook-1.wav`, `collection-0.wav`. Each clip should fit within half its scene's
 duration; the renderer permits modest timing adjustment and fails on a clip
