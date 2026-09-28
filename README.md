@@ -9,6 +9,11 @@ procedural soundtrack, and export a film — or build an entire 360° world.
 · [Quick start](#quick-start) · [Authoring guide](docs/story-authoring.md)
 · [360° guide](docs/360-video.md) · [MIT license](LICENSE)
 
+**New to the studio?** Follow the [complete narrated walkthrough](docs/walkthrough.md):
+make a film from start to export, import an SVG, explore 3D controls, and build
+360° and photographic worlds. Download the video and follow-along files from the
+[walkthrough release](https://github.com/ravipurohit1991/MathLoop-Studio/releases/tag/v0.1.2).
+
 MathLoop Studio is a local creative coding toolkit and browser editor. Start
 with a finished film, change its chapters and look, then render your own edition.
 No account or API key is required. Artwork and music are generated from source;

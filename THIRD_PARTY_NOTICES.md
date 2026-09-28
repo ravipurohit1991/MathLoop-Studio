@@ -18,3 +18,7 @@ are not bundled with this repository. The launch trailer uses Microsoft's
 Andrew Multilingual neural voice via the optional edge-tts tool, and the
 application's Aurora Glass score. The public narration script is sent to the
 online speech service when using that helper; the Studio itself does not use it.
+
+The complete walkthrough also uses the Andrew Multilingual neural voice. Its
+worked-example playback includes the app's Still Water score. The walkthrough
+capture and narration helpers are optional and separate from the application.

@@ -1,0 +1,1024 @@
+{
+  "title": "MathLoop Studio: Complete Walkthrough — Create a Film, Import SVGs & Build 360° Worlds",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "scenes": [
+    {
+      "id": "welcome",
+      "chapter": "Start here",
+      "heading": "What we will make",
+      "note": "Follow one project from a starting film to a playable MP4.",
+      "mode": "story",
+      "setup": [
+        [
+          "select",
+          "Story template",
+          "fourier-monkey"
+        ],
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "In this walkthrough, we will make a short mathematical film together. We will start with a ready-made monkey animation, change its text and timing, choose music, save the editable project, and export a video.",
+          "actions": [
+            [
+              "click",
+              "Play preview"
+            ]
+          ]
+        },
+        {
+          "text": "Then we will bring in our own SVG, explore three-dimensional films, arrange a three-sixty scene, and visit Nature Worlds. You can follow along using the example files linked in the description.",
+          "actions": [
+            [
+              "click",
+              "Pause preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setup",
+      "chapter": "Install and open the app",
+      "heading": "Run the studio locally",
+      "note": "Node.js 22+ and Git • FFmpeg is needed for native command-line exports.",
+      "card": "setup",
+      "cues": [
+        {
+          "text": "To get started, install Node version twenty-two or newer and Git. Clone the repository, enter its folder, run npm ci to install the dependencies, then npm run dev. Open the local address shown here. The studio runs in your browser without an account or API key."
+        }
+      ]
+    },
+    {
+      "id": "workspaces",
+      "chapter": "Meet the three workspaces",
+      "heading": "Choose the right workspace",
+      "note": "Story = portrait films • 360 Studio = arranged scenes • Nature = photographic worlds",
+      "mode": "story",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "The three tabs represent three kinds of output. Story Studio creates portrait films. Three-sixty Studio places animated objects around a viewer. Nature Worlds uses photographic environments with animated weather. We will begin in Story Studio, where the same editing ideas are easiest to see.",
+          "actions": [
+            [
+              "highlight",
+              "[role=tablist]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "chapter": "Choose a starting film",
+      "heading": "1. Choose a starting film",
+      "note": "15 authored films: 8 in 2D and 7 in 3D.",
+      "mode": "story",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "The collection gives you fifteen starting films. Use the filters to browse two-dimensional drawings or three-dimensional sculptures. Each option already has an animation, chapters, colours, and a soundtrack. Choosing a film loads an editable starting point.",
+          "actions": [
+            [
+              "click",
+              "3D authored films"
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "click",
+              "2D authored films"
+            ]
+          ]
+        },
+        {
+          "text": "For our example, choose the Fourier monkey. We will keep its underlying animation and make the story our own. You do not need to write code for these edits.",
+          "actions": [
+            [
+              "select",
+              "Story template",
+              "fourier-monkey"
+            ],
+            [
+              "focus",
+              ".story-workspace"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "chapter": "Understand chapters and preview",
+      "heading": "2. Read the editor",
+      "note": "Left: chapters • Centre: film preview • Right: selected chapter settings",
+      "mode": "story",
+      "setup": [
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Read the editor from left to right. Chapters form the story on the left. The centre is the actual film preview. The right panel edits the selected chapter. Click a chapter to jump to that moment, then look at its title and caption in the inspector.",
+          "actions": [
+            [
+              "chapter",
+              1
+            ],
+            [
+              "wait",
+              4
+            ],
+            [
+              "chapter",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "heading": "What do the rotating circles do?",
+      "note": "Add rotating vectors → their endpoint traces an outline.",
+      "mode": "story",
+      "setup": [
+        [
+          "chapter",
+          2
+        ],
+        [
+          "focus",
+          ".story-preview"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Here is the mathematical idea behind the drawing. Each rotating circle contributes a vector. Add those vectors together, and the endpoint traces a path. More components can reproduce a more detailed outline. The chapters reveal this construction step by step, before showing the finished artwork.",
+          "actions": [
+            [
+              "click",
+              "Play preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "chapter": "Edit text and timing",
+      "heading": "3. Give a chapter a clear message",
+      "note": "Select a chapter → edit its title and caption → inspect the result.",
+      "mode": "story",
+      "setup": [
+        [
+          "chapter",
+          0
+        ],
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Let us rewrite the opening. The title supports separate lines, so I will use: One circle, many possibilities. The caption explains what the viewer should notice. Watch the centre preview update as the text changes.",
+          "actions": [
+            [
+              "fill",
+              "Chapter title",
+              "One circle.\nMany possibilities."
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "fill",
+              "Chapter caption",
+              "Watch rotating circles build a Fourier monkey."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "heading": "Give the message time to be read",
+      "note": "Chapter duration changes one section. Total length retimes the whole film.",
+      "mode": "story",
+      "setup": [
+        [
+          "chapter",
+          0
+        ],
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Chapter duration controls how long this particular idea stays on screen. I will give the opening four seconds. Total length is different: it scales the timing of the entire film. The animation cues follow their chapters when you change the timing.",
+          "actions": [
+            [
+              "fill",
+              "Chapter duration",
+              "4"
+            ]
+          ]
+        },
+        {
+          "text": "For a compact review export, set the total length to twenty seconds. Notice how the chapter timings update together. This is useful for trying an edit quickly; a slower teaching film can use a much longer duration.",
+          "actions": [
+            [
+              "fill",
+              "Total length",
+              "20"
+            ],
+            [
+              "fill",
+              "Film title",
+              "My first Fourier film"
+            ],
+            [
+              "focus",
+              ".story-workspace"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "heading": "4. Check the sequence",
+      "note": "Scrub to a moment; step frame by frame; play to judge pacing.",
+      "mode": "story",
+      "setup": [
+        [
+          "focus",
+          ".story-preview"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Use the playhead to inspect any point in the film. The numbered ribbon below it jumps between chapters. Previous frame and next frame are useful for checking a transition precisely. Press play to judge whether the text and animation have enough breathing room.",
+          "actions": [
+            [
+              "fill",
+              "Story playhead",
+              "10"
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "click",
+              "Next frame"
+            ],
+            [
+              "wait",
+              2
+            ],
+            [
+              "click",
+              "Play preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "chapter": "Choose appearance and delivery",
+      "heading": "5. Set the look and delivery",
+      "note": "Review at 540 × 960 / 24 fps. Choose 1080 × 1920 for a larger portrait export.",
+      "mode": "story",
+      "setup": [
+        [
+          "chapter",
+          3
+        ],
+        [
+          "focus",
+          ".story-inspector"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Below the chapter settings are the film title, frame rate, delivery size, and colour palette. I am using twenty-four frames per second and a small portrait export for this demonstration. For a larger final upload, choose ten-eighty by nineteen-twenty.",
+          "actions": [
+            [
+              "select",
+              "Frame rate",
+              "24"
+            ],
+            [
+              "select",
+              "Delivery size",
+              "540"
+            ],
+            [
+              "highlight",
+              ".story-swatches"
+            ]
+          ]
+        },
+        {
+          "text": "The background, ink, accent, and guide swatches control the visual palette. Return to the beginning controls looping in the preview. Always inspect the completed picture after a change, especially if you choose colours with less contrast.",
+          "actions": [
+            [
+              "fill",
+              "accent colour",
+              "#e68938"
+            ],
+            [
+              "fill",
+              "Story playhead",
+              "17"
+            ],
+            [
+              "focus",
+              ".story-preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scores",
+      "chapter": "Add a procedural soundtrack",
+      "heading": "6. Choose music",
+      "note": "Eight procedural scores • Score volume controls the saved mix.",
+      "mode": "story",
+      "setup": [
+        [
+          "focus",
+          ".story-scores"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Scroll to The Sound. These eight scores are generated by the app. Click a card to select and audition it. I will choose Still Water, then reduce the score volume. No score gives you a silent export. The chosen soundtrack is saved with the project.",
+          "actions": [
+            [
+              "score",
+              "Still Water"
+            ],
+            [
+              "wait",
+              4
+            ],
+            [
+              "fill",
+              "Score volume",
+              "0.35"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "save",
+      "chapter": "Save and reopen the project",
+      "heading": "7. Save an editable copy",
+      "note": "Project JSON = editable recipe. MP4 = rendered result.",
+      "mode": "story",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Save project downloads a JSON file containing the editable recipe: the story, chapter text, timing, colours, and audio settings. Browser autosave is convenient, but it is not a portable backup. Keep this downloaded project whenever you want to return to an edit.",
+          "actions": [
+            [
+              "save",
+              "Save project",
+              "my-first-film.story.json"
+            ]
+          ]
+        },
+        {
+          "text": "To check that it is reusable, I will open that same file again. The edited title and twenty-second timeline return. Saving the project and exporting a film are separate steps; one preserves the edit, the other creates something you can watch.",
+          "actions": [
+            [
+              "open",
+              "my-first-film.story.json"
+            ],
+            [
+              "focus",
+              ".story-workspace"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "export",
+      "chapter": "Export and watch the result",
+      "heading": "8. Export the MP4",
+      "note": "Actual browser export • The waiting interval is shortened in this walkthrough.",
+      "mode": "story",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Now click Export MP4. The app renders the frames and includes the selected score. The waiting interval is shortened here. When the download completes, open the MP4 and check the picture, timing, and sound before sharing it.",
+          "actions": [
+            [
+              "export",
+              "Export MP4",
+              "my-first-film.mp4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "result",
+      "heading": "Our exported film",
+      "note": "Actual 20-second browser export • Still Water soundtrack",
+      "result": "my-first-film.mp4",
+      "cues": [
+        {
+          "text": "Here is the exported file we just made. The text changes, chapter pacing, colour choice, and soundtrack all belong to this saved edit. I will let a few seconds play so you can hear the result."
+        }
+      ],
+      "listen": 10
+    },
+    {
+      "id": "svg",
+      "chapter": "Turn an SVG into a film",
+      "heading": "9. Bring your own outline",
+      "note": "Import a simple SVG outline; the geometry is embedded in the project.",
+      "mode": "story",
+      "setup": [
+        [
+          "focus",
+          ".story-outline"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "You can also start from your own artwork. Turn an SVG into a story imports an outline and builds a Fourier animation from its contours. I am using a simple leaf from the example files. The import creates a new project, so save your current edit first.",
+          "actions": [
+            [
+              "svg",
+              "examples/walkthrough-leaf.svg"
+            ]
+          ]
+        },
+        {
+          "text": "Scrub forward to see the leaf reconstructed. Then edit the chapter wording just as we did for the monkey. This feature imports geometry, rather than reproducing every SVG styling effect. A clean outline is a useful first experiment.",
+          "actions": [
+            [
+              "fill",
+              "Story playhead",
+              "28"
+            ],
+            [
+              "focus",
+              ".story-preview"
+            ],
+            [
+              "click",
+              "Play preview"
+            ],
+            [
+              "wait",
+              2
+            ],
+            [
+              "click",
+              "Pause preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d",
+      "chapter": "Explore 3D films and camera controls",
+      "heading": "10. Move from a drawing to a sculpture",
+      "note": "A 3D film still exports to an ordinary portrait MP4.",
+      "mode": "story",
+      "setup": [
+        [
+          "select",
+          "Story template",
+          "fourier-whale-3d"
+        ],
+        [
+          "fill",
+          "Story playhead",
+          "45"
+        ],
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Next, choose the three-dimensional whale. Its geometry has depth, so changing the camera changes how the shape reads. The chapter editor, timeline, music, and export workflow are the same. A three-dimensional subject still produces an ordinary portrait video here.",
+          "actions": [
+            [
+              "click",
+              "Play preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "camera",
+      "heading": "Inspect depth, guides and the surface",
+      "note": "Camera settings and guide choices are stored in the project.",
+      "mode": "story",
+      "setup": [
+        [
+          "fill",
+          "Story playhead",
+          "12"
+        ],
+        [
+          "focus",
+          ".story-inspector fieldset"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Further down the inspector, construction guides can appear as rotating circles, sphere cages, or be hidden. You can also show the surface mesh. These views help explain how a form is built, or simplify it for the finished film.",
+          "actions": [
+            [
+              "select",
+              "Construction guides",
+              "spheres"
+            ],
+            [
+              "focus",
+              ".story-preview"
+            ],
+            [
+              "wait",
+              5
+            ],
+            [
+              "fill",
+              "Story playhead",
+              "45"
+            ],
+            [
+              "check",
+              "Show surface mesh",
+              true
+            ],
+            [
+              "focus",
+              ".story-preview"
+            ]
+          ]
+        },
+        {
+          "text": "The numeric camera controls let you orbit and tilt the view. I will change the yaw, then inspect the whale again. Use these controls to reveal the depth clearly instead of assuming the audience can infer it from one angle.",
+          "actions": [
+            [
+              "fill",
+              "Parameter cameraYaw",
+              "35"
+            ],
+            [
+              "focus",
+              ".story-preview"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tracks",
+      "chapter": "Optional: animation tracks and source code",
+      "heading": "11. Go deeper with animation tracks",
+      "note": "A cue belongs to a chapter and a progress value from 0 to 1.",
+      "mode": "story",
+      "setup": [
+        [
+          "click",
+          "Animation tracks"
+        ],
+        [
+          "focus",
+          ".story-advanced"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "For more control, open Animation tracks. The JSON describes parameter values at moments within a chapter. Progress zero is the chapter start, and one is its end. Apply tracks validates your changes. This is optional: the ready-made films already include their animation tracks.",
+          "actions": [
+            [
+              "highlight",
+              "textarea[aria-label='Animation tracks JSON']"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "heading": "How the source fits together",
+      "note": "React editor → project JSON → shared timeline and renderer → MP4",
+      "card": "code",
+      "cues": [
+        {
+          "text": "If you want to extend the code, start with the studio folder for the React interface, source stories for the film definitions, and source story for the timeline and rendering engine. The same time-based animation model drives preview and export. The command-line tools provide repeatable renders and batch workflows."
+        }
+      ]
+    },
+    {
+      "id": "stage",
+      "chapter": "Build a 360° scene",
+      "heading": "12. Arrange a room around the viewer",
+      "note": "360° changes the viewing direction. It is different from rotating a 3D object.",
+      "mode": "stage",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Now open Three-sixty Studio. Start with the aquarium, lanterns, or observatory. Here we arrange objects around a viewpoint. The audience can choose where to look in the exported spherical video. That is different from watching a camera angle that we fixed in a portrait film.",
+          "actions": [
+            [
+              "focus",
+              ".stage-collection"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lookaround",
+      "heading": "Understand the two preview modes",
+      "note": "Look around = viewer experience • Panorama = the complete 2:1 frame",
+      "mode": "stage",
+      "setup": [
+        [
+          "focus",
+          ".story-preview"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "In Look around mode, drag across the preview to turn your head inside the scene. Panorama shows the complete sphere laid flat in a two-to-one image. The distortion in that flat image is expected; a spherical player maps it back around the viewer.",
+          "actions": [
+            [
+              "drag",
+              "canvas[aria-label='360 stage preview']"
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "click",
+              "Panorama"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reel",
+      "heading": "13. Add and place a reel",
+      "note": "Heading = around you • Elevation = up/down • Size and distance = apparent scale",
+      "mode": "stage",
+      "setup": [
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "The left panel lists the reels already in the sphere. Add another from the rack, then select it. Its caption and placement controls appear on the right. Heading moves it around the viewer, while elevation moves it above or below the horizon.",
+          "actions": [
+            [
+              "addReel"
+            ],
+            [
+              "fill",
+              "Caption",
+              "MY EXTRA REEL"
+            ],
+            [
+              "fill",
+              "Heading",
+              "45"
+            ],
+            [
+              "fill",
+              "Elevation",
+              "15"
+            ],
+            [
+              "focus",
+              ".story-workspace"
+            ]
+          ]
+        },
+        {
+          "text": "Size and distance affect how large it feels. Tilt and facing control its orientation. Select the reel again to turn the preview toward it, then inspect the panorama to check the overall arrangement. Leave space between objects so the scene stays readable.",
+          "actions": [
+            [
+              "fill",
+              "Size",
+              "1.4"
+            ],
+            [
+              "fill",
+              "Distance",
+              "1300"
+            ],
+            [
+              "lastReel"
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "click",
+              "Panorama"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stageexport",
+      "heading": "14. Save a stage and choose an output",
+      "note": "Save stage keeps the arrangement. Sphere and portrait companion are separate exports.",
+      "mode": "stage",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Save stage downloads the editable arrangement. The spherical export uses a two-to-one frame with projection metadata. The delivery selector includes thirty-eight-forty by nineteen-twenty. As with a story, set the duration, frame rate, palette, and music before exporting.",
+          "actions": [
+            [
+              "save",
+              "Save stage",
+              "my-aquarium.stage.json"
+            ],
+            [
+              "select",
+              "Delivery size",
+              "3840"
+            ],
+            [
+              "focus",
+              ".story-inspector"
+            ]
+          ]
+        },
+        {
+          "text": "There is also a separate portrait companion button. It renders a guided tour of the same room for a vertical feed. The spherical film lets viewers look around; the companion chooses the camera path for them. Save both when you want those two viewing experiences.",
+          "actions": [
+            [
+              "highlightButton",
+              "Export the 9:16 Short"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "companions",
+      "heading": "Two deliverables from a 360° stage",
+      "note": "Left: flat spherical frame • Right: guided portrait companion • Existing aquarium samples",
+      "card": "companions",
+      "cues": [
+        {
+          "text": "These are the included aquarium sample outputs. The wide frame contains every direction, while the portrait companion visits the artwork in sequence. They are separate files. This walkthrough itself is a standard landscape video; use the spherical sample to try interactive viewing."
+        }
+      ]
+    },
+    {
+      "id": "nature",
+      "chapter": "Explore Nature Worlds",
+      "heading": "15. Switch to photographic worlds",
+      "note": "Three worlds: four seasons, rainforest and ocean.",
+      "mode": "nature",
+      "setup": [
+        [
+          "top"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Nature Worlds is a different visual system. It combines photographic panoramas with procedural weather and synthesized ambience. Choose the seasonal world, rainforest, or ocean. These are environments to explore, rather than Fourier drawings to edit chapter by chapter.",
+          "actions": [
+            [
+              "click",
+              "Open world: Under the living canopy"
+            ],
+            [
+              "wait",
+              4
+            ],
+            [
+              "click",
+              "Open world: Where the water meets the sky"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natureview",
+      "heading": "Look, turn and compare directions",
+      "note": "Drag or use arrow keys to turn. Scroll to change the field of view.",
+      "mode": "nature",
+      "setup": [
+        [
+          "click",
+          "Open world: A year around you"
+        ],
+        [
+          "focus",
+          ".nature-player"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Drag the picture or use the arrow keys to look around. The direction cards below jump to specific parts of the environment. Full panorama reveals the complete image. These controls help you inspect the world before deciding how much weather to add.",
+          "actions": [
+            [
+              "drag",
+              ".nature-player canvas"
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "region",
+              2
+            ],
+            [
+              "wait",
+              3
+            ],
+            [
+              "click",
+              "See full panorama"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "heading": "16. Set weather, duration and delivery",
+      "note": "Weather intensity changes the effect. Export is a full sphere, independent of preview direction.",
+      "mode": "nature",
+      "setup": [
+        [
+          "focus",
+          ".nature-bottom"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Weather intensity changes the animated effect. Set it low for a quieter scene or increase it to make the weather more visible. Loop length controls the exported duration, and panorama size controls resolution. The export contains the full sphere, regardless of which direction the preview faces.",
+          "actions": [
+            [
+              "fill",
+              "Weather intensity",
+              "0.3"
+            ],
+            [
+              "select",
+              "Loop length",
+              "30"
+            ],
+            [
+              "select",
+              "Panorama size",
+              "3840"
+            ],
+            [
+              "fill",
+              "Weather intensity",
+              "1.5"
+            ],
+            [
+              "focus",
+              ".nature-player"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natureaudio",
+      "heading": "Understand ambience and spatial export",
+      "note": "Directional preview isolates a direction. Spatial playback keeps the surrounding scene audible.",
+      "mode": "nature",
+      "setup": [
+        [
+          "focus",
+          ".nature-controls"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "Listen to this direction auditions the ambience for the direction you face. Spatial export behaves differently: other directions remain audible as the listener turns. Browser support for four-channel audio varies. If the browser cannot encode it, use the native command-line renderer with FFmpeg.",
+          "actions": [
+            [
+              "highlightButton",
+              "Listen to this direction"
+            ],
+            [
+              "focus",
+              ".nature-export"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cli",
+      "chapter": "Render from the command line",
+      "heading": "17. Repeat a render from the terminal",
+      "note": "Native exports require FFmpeg and ffprobe on PATH.",
+      "card": "cli",
+      "cues": [
+        {
+          "text": "The command line is useful for repeatable exports. Render a saved story project to reproduce your edit, or run collection to render the showcase films. The nature render command creates a spherical nature film with its spatial soundtrack through the native workflow. The readme documents the available commands and options."
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "chapter": "Your first project checklist",
+      "heading": "Make your first film",
+      "note": "Choose → explain → preview → save the project → export → watch the result",
+      "mode": "story",
+      "setup": [
+        [
+          "open",
+          "my-first-film.story.json"
+        ],
+        [
+          "fill",
+          "Story playhead",
+          "16"
+        ],
+        [
+          "focus",
+          ".story-workspace"
+        ]
+      ],
+      "cues": [
+        {
+          "text": "You now have the complete workflow. Choose a starting point, give each chapter one clear idea, check the pacing, add sound, save the editable project, and watch the exported film. Then try an SVG outline or build a scene around the viewer.",
+          "actions": [
+            [
+              "click",
+              "Play preview"
+            ]
+          ]
+        },
+        {
+          "text": "The repository, example project, leaf outline, and sample videos are linked below. If you try MathLoop Studio, tell me what you made and which step you would like explained next. Thanks for watching."
+        }
+      ]
+    }
+  ]
+}
